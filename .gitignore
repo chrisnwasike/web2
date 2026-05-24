@@ -1,0 +1,31 @@
+# Ignore the acquisition plan file (as requested)
+30day-acquisition-plan.md
+
+# OS / editor artifacts
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*~
+.vscode/
+.idea/
+
+# Dependency directories (if any future build step)
+node_modules/
+bower_components/
+
+# Build / output folders
+dist/
+build/
+out/
+
+# Logs
+*.log
+npm-debug.log*
+
+# Environment / secrets
+.env
+.env.local
+
+# Local asset cache (if any)
+assets/.cache/
