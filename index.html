@@ -3,14 +3,14 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Chris Nwasike - Senior Web Developer, Lagos</title>
-  <meta name="description" content="Senior web developer based in Lagos. I build fast, practical websites and business systems for companies that need things done properly." />
-  <meta name="keywords" content="web developer Nigeria, PHP developer Lagos, full stack developer Nigeria, website developer Lagos, business web applications" />
+  <title>Chris Nwasike - Web Developer & Business Systems Specialist</title>
+  <meta name="description" content="Senior web developer based in Lagos. I fix underperforming websites and build business systems that actually improve how companies operate." />
+  <meta name="keywords" content="web developer Nigeria, PHP developer Lagos, business systems developer, website rebuild Lagos, web application developer Nigeria" />
   <meta name="author" content="Chris Nwasike" />
 
   <!-- Open Graph -->
-  <meta property="og:title" content="Chris Nwasike - Senior Web Developer" />
-  <meta property="og:description" content="I build fast, practical websites and business systems. Based in Lagos, working with clients globally." />
+  <meta property="og:title" content="Chris Nwasike - Web Developer & Business Systems Specialist" />
+  <meta property="og:description" content="Most business websites look acceptable. Very few actually improve the business. I fix the gap." />
   <meta property="og:url" content="https://chrisnwasike.github.io/web/" />
   <meta property="og:type" content="website" />
 
@@ -221,6 +221,169 @@
     }
 
     /* ===========================================
+       DIAGNOSTIC SECTION - "What Goes Wrong"
+    =========================================== */
+    .diagnostic {
+      background: var(--bg-raised);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      padding: clamp(5rem, 10vw, 8rem) 0;
+    }
+
+    .diagnostic__grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: clamp(3rem, 6vw, 6rem);
+      align-items: start;
+    }
+
+    @media (min-width: 900px) {
+      .diagnostic__grid { grid-template-columns: 360px 1fr; }
+    }
+
+    .diagnostic__left {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    @media (min-width: 900px) {
+      .diagnostic__left {
+        position: sticky;
+        top: 6rem;
+      }
+    }
+
+    .diagnostic__intro {
+      font-size: 0.975rem;
+      line-height: 1.82;
+      color: var(--text-dim);
+    }
+
+    .diagnostic__close {
+      font-size: 0.95rem;
+      line-height: 1.8;
+      color: var(--text-dim);
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--border);
+    }
+
+    .diagnostic__close em {
+      font-style: normal;
+      color: var(--text);
+      font-weight: 500;
+    }
+
+    .diagnostic__problems {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .problem-item {
+      display: grid;
+      grid-template-columns: 2rem 1fr;
+      gap: 1rem;
+      padding: 1.5rem 0;
+      border-bottom: 1px solid var(--border);
+      align-items: start;
+    }
+
+    .problem-item:first-child { border-top: 1px solid var(--border); }
+
+    .problem-item__num {
+      font-family: var(--font-display);
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      color: var(--text-faint);
+      padding-top: 0.28rem;
+    }
+
+    .problem-item__title {
+      font-family: var(--font-display);
+      font-size: 0.975rem;
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 0.35rem;
+      letter-spacing: -0.01em;
+    }
+
+    .problem-item__desc {
+      font-size: 0.855rem;
+      line-height: 1.72;
+      color: var(--text-dim);
+    }
+
+    .diagnostic__pullquote {
+      margin-top: clamp(2.5rem, 5vw, 4rem);
+      padding: 1.75rem 2rem;
+      background: var(--bg-surface);
+      border-left: 2px solid var(--accent);
+      border-radius: 0 var(--r-md) var(--r-md) 0;
+    }
+
+    .diagnostic__pullquote p {
+      font-family: var(--font-display);
+      font-size: clamp(1rem, 1.6vw, 1.15rem);
+      font-weight: 600;
+      color: var(--white);
+      line-height: 1.5;
+      letter-spacing: -0.01em;
+    }
+
+    .diagnostic__pullquote span {
+      display: block;
+      font-size: 0.82rem;
+      color: var(--text-dim);
+      margin-top: 0.5rem;
+      font-weight: 400;
+    }
+
+    /* ===========================================
+       PROJECT CARD - outcome block
+    =========================================== */
+    .project-card__outcome {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.6rem;
+      padding: 0.8rem 1rem;
+      background: rgba(200, 164, 106, 0.05);
+      border: 1px solid rgba(200, 164, 106, 0.12);
+      border-radius: var(--r-sm);
+    }
+
+    .project-card__outcome-icon {
+      color: var(--accent);
+      flex-shrink: 0;
+      margin-top: 0.08rem;
+    }
+
+    .project-card__outcome-icon svg { width: 0.85rem; height: 0.85rem; }
+
+    .project-card__outcome p {
+      font-size: 0.8rem;
+      line-height: 1.62;
+      color: var(--text-dim);
+    }
+
+    .project-card__outcome strong {
+      color: var(--text);
+      font-weight: 500;
+    }
+
+    /* ===========================================
+       SERVICE CARD - problem-first refinement
+    =========================================== */
+    .service-card__problem-line {
+      font-size: 0.78rem;
+      color: var(--text-faint);
+      font-style: italic;
+      line-height: 1.55;
+      padding-bottom: 0.75rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    /* ===========================================
        ANIMATION STATES
     =========================================== */
     .fade-up {
@@ -375,7 +538,7 @@
        HERO
     =========================================== */
     .hero {
-      padding: clamp(8rem, 18vw, 13rem) 0 clamp(5rem, 10vw, 8rem);
+      padding: clamp(6rem, 13vw, 9rem) 0 clamp(5rem, 10vw, 8rem);
       position: relative;
     }
 
@@ -1250,7 +1413,7 @@
           <li><a href="#contact">Contact</a></li>
         </ul>
 
-        <a href="#contact" class="btn btn--ghost nav__cta">Let's talk</a>
+        <a href="#contact" class="btn btn--ghost nav__cta">Discuss your project</a>
 
         <button class="nav__mobile-toggle" aria-label="Open menu" id="menuToggle">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -1268,7 +1431,7 @@
     <a href="#services" class="menu-link">Services</a>
     <a href="#about" class="menu-link">About</a>
     <a href="#contact" class="menu-link">Contact</a>
-    <a href="#contact" class="btn btn--primary mt-md">Let's talk</a>
+    <a href="#contact" class="btn btn--primary mt-md">Discuss your project</a>
   </div>
 
   <!-- ========================================================
@@ -1279,37 +1442,35 @@
       <div class="container">
         <div class="hero__inner">
 
-          <div class="hero__status fade-in">
-            <div class="hero__status-dot" aria-hidden="true"></div>
-            <span class="hero__status-text">Available for new projects · Lagos, Nigeria</span>
+          <div class="hero__eyeline fade-in">
+            Chris Nwasike &nbsp;·&nbsp; Lagos, Nigeria &nbsp;·&nbsp; Working globally
           </div>
 
-          <h1 class="display-1 fade-up">
-            I build websites<br>
-            that actually<br>
-            <span class="text-accent">do the job.</span>
+          <h1 class="display-1 fade-up" style="margin-top: 2rem;">
+            Your website looks good. 
+            <span class="text-accent">But does it really help your business?</span>
           </h1>
 
           <p class="hero__sub fade-up">
-            Senior web developer with 15 years of project experience. I work with businesses, agencies, and founders who need things built properly - on time, without the back-and-forth.
+            Slow internal systems. Confusing user flows. Developers who built the page but never thought about the operation behind it. These problems don't announce themselves - they just quietly cost money, every month.
           </p>
 
           <div class="hero__actions fade-up">
-            <a href="#work" class="btn btn--primary">See my work</a>
-            <a href="#contact" class="btn btn--ghost">Start a project</a>
+            <a href="#work" class="btn btn--primary">See selected work</a>
+            <a href="#contact" class="btn btn--ghost">Discuss your situation</a>
           </div>
 
           <div class="hero__credentials fade-up">
             <div class="hero__cred-item">
-              <strong>15 yrs</strong> building on the web
+              <strong>15 years</strong> of project experience
             </div>
             <div class="hero__cred-item" aria-hidden="true">·</div>
             <div class="hero__cred-item">
-              <strong>PHP / MySQL</strong> stack specialist
+              PHP · MySQL · Vanilla JS
             </div>
             <div class="hero__cred-item" aria-hidden="true">·</div>
             <div class="hero__cred-item">
-              Clients across Lagos, London & beyond
+              Clients across Lagos, London &amp; beyond
             </div>
           </div>
 
@@ -1380,19 +1541,108 @@
     <hr class="divider" />
 
     <!-- ========================================================
+         DIAGNOSTIC SECTION - What Usually Goes Wrong
+    ======================================================== -->
+    <section class="diagnostic" id="diagnostic" aria-labelledby="diagnostic-heading">
+      <div class="container">
+        <div class="diagnostic__grid">
+
+          <div class="diagnostic__left">
+            <span class="label fade-in">An honest observation</span>
+            <h2 class="display-2 fade-up" id="diagnostic-heading" style="margin-top:0.5rem;">
+              What usually<br>goes wrong.
+            </h2>
+            <p class="diagnostic__intro fade-up">
+              After fifteen years of working across service businesses, platforms, and internal tools, the problems are rarely unique. Most businesses are dealing with the same few failures - they've just got used to working around them.
+            </p>
+            <div class="diagnostic__close fade-up">
+              <em>This is usually the point at which companies contact me.</em> Not because they want a new website. Because something is costing them - and they've finally decided to fix it.
+            </div>
+          </div>
+
+          <div class="diagnostic__problems fade-up">
+
+            <div class="problem-item">
+              <span class="problem-item__num">01</span>
+              <div>
+                <div class="problem-item__title">The site was built for appearance, not operation</div>
+                <p class="problem-item__desc">It looks reasonable. But behind it, the team still uses spreadsheets, emails, and manual follow-ups to do work the site should be handling. Nobody planned the operation - they planned the pages.</p>
+              </div>
+            </div>
+
+            <div class="problem-item">
+              <span class="problem-item__num">02</span>
+              <div>
+                <div class="problem-item__title">The admin system is worse than the public site</div>
+                <p class="problem-item__desc">Staff navigate it slowly. Simple tasks require multiple steps. When anything changes, someone has to call the developer. A system your own team struggles to use is an expensive problem hiding in plain sight.</p>
+              </div>
+            </div>
+
+            <div class="problem-item">
+              <span class="problem-item__num">03</span>
+              <div>
+                <div class="problem-item__title">Users drop off and nobody knows exactly where</div>
+                <p class="problem-item__desc">Traffic comes in. Conversions don't match up. The form is too long, the navigation is confusing, or the page doesn't answer the question the visitor actually has. Most of this is fixable - once you look at it properly.</p>
+              </div>
+            </div>
+
+            <div class="problem-item">
+              <span class="problem-item__num">04</span>
+              <div>
+                <div class="problem-item__title">The developer disappeared after launch</div>
+                <p class="problem-item__desc">There was no handover. Nobody knows how to change anything. The business is dependent on someone who's no longer available, and every small update becomes a project. This is more common than it should be.</p>
+              </div>
+            </div>
+
+            <div class="problem-item">
+              <span class="problem-item__num">05</span>
+              <div>
+                <div class="problem-item__title">The site doesn't work properly on mobile</div>
+                <p class="problem-item__desc">It was built on desktop and tested on desktop. Half of visitors - often more - are on phones. A layout that breaks, loads slowly, or buries key information on mobile is turning people away before they've made a decision.</p>
+              </div>
+            </div>
+
+            <div class="problem-item">
+              <span class="problem-item__num">06</span>
+              <div>
+                <div class="problem-item__title">The system was built for today, not for growth</div>
+                <p class="problem-item__desc">It works at current volume. But add more users, more data, more products - and cracks appear. Features that should be straightforward require significant rework. The architecture wasn't planned. It was improvised.</p>
+              </div>
+            </div>
+
+            <div class="problem-item">
+              <span class="problem-item__num">07</span>
+              <div>
+                <div class="problem-item__title">Nobody thinks about what happens after a customer arrives</div>
+                <p class="problem-item__desc">The marketing spends money to get people there. The site has no clear path forward. No logical next step. No mechanism for capturing interest or starting a relationship. Traffic and conversion are treated as separate problems - they aren't.</p>
+              </div>
+            </div>
+
+            <div class="diagnostic__pullquote">
+              <p>"A lot of businesses are operating around bad systems instead of fixing them. The cost is real - it's just distributed across enough people and enough weeks that nobody totals it up."</p>
+              <span>- This is the first conversation I have with most new clients.</span>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================
          PROJECTS
     ======================================================== -->
     <section class="section" id="work" aria-labelledby="work-heading">
       <div class="container">
         <div class="section-header section-header__split">
           <div>
-            <span class="label fade-in">Featured work</span>
+            <span class="label fade-in">Selected work</span>
             <h2 class="display-2 fade-up" id="work-heading" style="margin-top:0.5rem;">
-              Selected projects
+              What changed<br>operationally.
             </h2>
           </div>
-          <p class="body-sm fade-in" style="max-width:320px;">
-            Five projects across different industries. Each one built to solve a real business problem.
+          <p class="body-sm fade-in" style="max-width:300px;">
+            Five engagements. Different industries, different problems - but in each case, something in how the business operated improved.
           </p>
         </div>
 
@@ -1409,12 +1659,6 @@
               />
               <div class="project-card__image-placeholder" style="display:none;">
                 <div class="placeholder-box">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="m9 9 6 6m0-6-6 6"/></svg>
-                  <span>Image coming</span>
-                </div>
-              </div>
-              <div class="project-card__image-placeholder" id="sc-placeholder" style="display:none;">
-                <div class="placeholder-box">
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="12" cy="10" r="3"/><path d="M7 20c0-2.8 2.2-5 5-5s5 2.2 5 5"/></svg>
                   <span>safetycentre-home.png</span>
                 </div>
@@ -1425,20 +1669,26 @@
                 <span class="label">SafetyCentre</span>
                 <span class="chip">Service Business</span>
               </div>
-              <h3 class="project-card__title">Client Portal & Services Platform</h3>
-              <p class="project-card__problem">
-                Clients struggled to understand the service offering. The old site made the team manage everything manually.
-              </p>
+              <h3 class="project-card__title">From manual follow-ups to a structured client system</h3>
               <p class="project-card__desc">
-                Rebuilt as a structured service platform with clear navigation, inquiry routing, and a client-facing interface that reduced admin time for the team.
+                The team was managing inquiries manually - emails, follow-up calls, spreadsheets. The site existed but did no operational work. Every new client required staff to repeat the same process by hand.
               </p>
+              <p class="project-card__desc" style="margin-top:-0.25rem;">
+                Rebuilt as a structured service platform: inquiry routing, service categorisation, and a client-facing interface that let visitors self-qualify and reach the right team faster. Staff time on routine admin dropped noticeably within weeks.
+              </p>
+              <div class="project-card__outcome">
+                <span class="project-card__outcome-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg></span>
+                <p><strong>Operational shift:</strong> Clients could navigate the service offering independently. The team stopped chasing basic inquiries and started responding to qualified ones.</p>
+              </div>
               <div class="project-card__stack">
                 <span class="chip">PHP</span>
                 <span class="chip">MySQL</span>
                 <span class="chip">Bootstrap 5</span>
                 <span class="chip">Vanilla JS</span>
               </div>
-              
+              <div class="project-card__footer">
+                <a href="#contact" class="project-link">Request case study →</a>
+              </div>
             </div>
           </article>
 
