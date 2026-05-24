@@ -46,7 +46,7 @@ Structured data and topic clustering help search engines and AI tools (ChatGPT, 
 
 ## 📞 Contact
 - WhatsApp: [+234 901 800 4458](https://wa.me/2349018004458)
-- Calendly: [30-min call](https://calendly.com/chris-dbuilder/30min)
+- Calendly: [30-min call](https://calendly.com/chrisnwasike/30min)
 - LinkedIn: [Chris Nwasike](https://linkedin.com/in/chris-nwasike)
 
 ## 📄 License
