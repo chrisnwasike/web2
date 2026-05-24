@@ -1,36 +1,83 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Chris Nwasike - Web Developer & Business Systems Specialist</title>
-  <meta name="description" content="Senior web developer based in Lagos. I fix underperforming websites and build business systems that actually improve how companies operate." />
-  <meta name="keywords" content="web developer Nigeria, PHP developer Lagos, business systems developer, website rebuild Lagos, web application developer Nigeria" />
+  <meta name="description"
+    content="Senior web developer based in Lagos. I fix underperforming websites and build business systems that actually improve how companies operate." />
+  <meta name="keywords"
+    content="web developer Nigeria, PHP developer Lagos, business systems developer, website rebuild Lagos, web application developer Nigeria" />
   <meta name="author" content="Chris Nwasike" />
 
   <!-- Open Graph -->
   <meta property="og:title" content="Chris Nwasike - Web Developer & Business Systems Specialist" />
-  <meta property="og:description" content="Most business websites look acceptable. Very few actually improve the business. I fix the gap." />
-  <meta property="og:url" content="https://chrisnwasike.github.io/web/" />
+  <meta property="og:description"
+    content="Most business websites look acceptable. Very few actually improve the business. I fix the gap." />
+  <meta property="og:url" content="https://chrisnwasike.github.io/web2/" />
   <meta property="og:type" content="website" />
 
   <!-- Canonical -->
-  <link rel="canonical" href="https://chrisnwasike.github.io/web/" />
+  <link rel="canonical" href="https://chrisnwasike.github.io/web2/" />
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Inter:wght@300;400;500&display=swap"
+    rel="stylesheet" />
 
   <!-- GSAP -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" defer></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js" defer></script>
 
   <style>
+    /* SAME EXCELLENT STYLES AS ORIGINAL – KEPT INTACT */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg: #0d0d0f; --bg-raised: #141417; --bg-surface: #1b1b1f; --border: rgba(255,255,255,0.065);
+      --text: #ddd9d0; --text-dim: #7a7670; --text-faint: #484541; --white: #f5f2eb;
+      --accent: #c8a46a; --accent-dim: rgba(200,164,106,0.14);
+      --font-display: 'Manrope', sans-serif; --font-body: 'Inter', sans-serif;
+      --max-w: 1160px; --pad: clamp(1.25rem, 5vw, 2.75rem); --r-lg: 14px;
+    }
+    body { background: var(--bg); color: var(--text); font-family: var(--font-body); line-height: 1.72; overflow-x: hidden; }
+    .container { max-width: var(--max-w); margin: 0 auto; padding: 0 var(--pad); }
+    .section { padding: clamp(5rem, 10vw, 8rem) 0; }
+    .section--tight { padding: clamp(3rem, 6vw, 5rem) 0; }
+    .display-1 { font-family: var(--font-display); font-size: clamp(2.6rem, 6vw, 5rem); font-weight: 800; line-height: 1.06; color: var(--white); }
+    .display-2 { font-family: var(--font-display); font-size: clamp(1.8rem, 4vw, 3.2rem); font-weight: 700; }
+    .label { font-family: var(--font-display); font-size: 0.68rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent); }
+    .btn { display: inline-flex; align-items: center; gap: 0.4rem; padding: 0.8rem 1.6rem; border-radius: 8px; font-weight: 600; transition: 0.2s; }
+    .btn--primary { background: var(--accent); color: #0d0d0f; }
+    .btn--ghost { background: transparent; border: 1px solid rgba(255,255,255,0.13); color: var(--text); }
+    .chip { background: var(--bg-surface); border: 1px solid var(--border); border-radius: 100px; padding: 0.25rem 0.65rem; font-size: 0.75rem; }
+    .diagnostic { background: var(--bg-raised); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); padding: clamp(5rem, 10vw, 8rem) 0; }
+    .diagnostic__grid { display: grid; gap: clamp(3rem, 6vw, 6rem); } @media (min-width: 900px) { .diagnostic__grid { grid-template-columns: 360px 1fr; } }
+    .problem-item { display: grid; grid-template-columns: 2rem 1fr; gap: 1rem; padding: 1.5rem 0; border-bottom: 1px solid var(--border); }
+    .projects__list, .services__grid { display: flex; flex-direction: column; gap: 1px; background: var(--border); border-radius: var(--r-lg); overflow: hidden; }
+    .project-card { background: var(--bg-raised); display: grid; } @media (min-width: 860px) { .project-card { grid-template-columns: 340px 1fr; } }
+    .service-card { background: var(--bg-raised); padding: 2.25rem 2rem; transition: background 0.25s; }
+    .faq-item { border-bottom: 1px solid var(--border); padding: 1.5rem 0; }
+    .faq-question { font-family: var(--font-display); font-weight: 700; color: var(--white); cursor: pointer; display: flex; justify-content: space-between; }
+    .faq-answer { max-height: 0; overflow: hidden; transition: 0.3s ease; color: var(--text-dim); }
+    .faq-item.active .faq-answer { max-height: 300px; margin-top: 0.75rem; }
+    .contact-link { display: flex; align-items: center; gap: 1rem; background: var(--bg-raised); border: 1px solid var(--border); border-radius: 8px; padding: 0.9rem 1rem; }
+    .wa-float { position: fixed; bottom: 1.75rem; right: 1.75rem; background: #25d366; border-radius: 50%; width: 3.25rem; height: 3.25rem; display: flex; align-items: center; justify-content: center; z-index: 90; box-shadow: 0 4px 18px rgba(37,211,102,0.3); }
+    .nav { position: fixed; top: 0; width: 100%; z-index: 100; padding: 1.25rem 0; transition: 0.3s; } .nav.scrolled { background: rgba(13,13,15,0.88); backdrop-filter: blur(14px); border-bottom: 1px solid var(--border); }
+    @media (max-width: 768px) { .nav__links, .nav__cta { display: none; } .nav__mobile-toggle { display: flex; } }
+    .mobile-menu { display: none; position: fixed; inset: 0; background: rgba(13,13,15,0.98); backdrop-filter: blur(10px); flex-direction: column; align-items: center; justify-content: center; gap: 2rem; z-index: 99; }
+    .mobile-menu.open { display: flex; }
+    .fade-up, .slide-left, .slide-right { opacity: 0; } .fade-up { transform: translateY(24px); }
+  </style>
+  <style>
     /* ===========================================
        RESET & BASE
     =========================================== */
-    *, *::before, *::after {
+    *,
+    *::before,
+    *::after {
       box-sizing: border-box;
       margin: 0;
       padding: 0;
@@ -38,35 +85,35 @@
 
     :root {
       /* Palette - warm editorial dark */
-      --bg:          #0d0d0f;
-      --bg-raised:   #141417;
-      --bg-surface:  #1b1b1f;
-      --border:      rgba(255, 255, 255, 0.065);
-      --border-h:    rgba(255, 255, 255, 0.13);
+      --bg: #0d0d0f;
+      --bg-raised: #141417;
+      --bg-surface: #1b1b1f;
+      --border: rgba(255, 255, 255, 0.065);
+      --border-h: rgba(255, 255, 255, 0.13);
 
       /* Text */
-      --text:        #ddd9d0;
-      --text-dim:    #7a7670;
-      --text-faint:  #484541;
-      --white:       #f5f2eb;
+      --text: #ddd9d0;
+      --text-dim: #7a7670;
+      --text-faint: #484541;
+      --white: #f5f2eb;
 
       /* Accent - warm amber, refined */
-      --accent:      #c8a46a;
-      --accent-dim:  rgba(200, 164, 106, 0.14);
-      --accent-faint:rgba(200, 164, 106, 0.06);
+      --accent: #c8a46a;
+      --accent-dim: rgba(200, 164, 106, 0.14);
+      --accent-faint: rgba(200, 164, 106, 0.06);
 
       /* Fonts */
       --font-display: 'Manrope', sans-serif;
-      --font-body:    'Inter', sans-serif;
+      --font-body: 'Inter', sans-serif;
 
       /* Layout */
-      --max-w:  1160px;
-      --pad:    clamp(1.25rem, 5vw, 2.75rem);
+      --max-w: 1160px;
+      --pad: clamp(1.25rem, 5vw, 2.75rem);
 
       /* Radius */
-      --r-sm:  4px;
-      --r-md:  8px;
-      --r-lg:  14px;
+      --r-sm: 4px;
+      --r-md: 8px;
+      --r-lg: 14px;
     }
 
     html {
@@ -84,9 +131,19 @@
       overflow-x: hidden;
     }
 
-    img { max-width: 100%; display: block; }
-    a   { color: inherit; text-decoration: none; }
-    ul  { list-style: none; }
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    ul {
+      list-style: none;
+    }
 
     /* ===========================================
        LAYOUT
@@ -179,6 +236,7 @@
       background: var(--accent);
       color: #0d0d0f;
     }
+
     .btn--primary:hover {
       background: #d4b07a;
       transform: translateY(-1px);
@@ -189,8 +247,9 @@
       color: var(--text);
       border: 1px solid var(--border-h);
     }
+
     .btn--ghost:hover {
-      border-color: rgba(255,255,255,0.22);
+      border-color: rgba(255, 255, 255, 0.22);
       color: var(--white);
       transform: translateY(-1px);
     }
@@ -238,7 +297,9 @@
     }
 
     @media (min-width: 900px) {
-      .diagnostic__grid { grid-template-columns: 360px 1fr; }
+      .diagnostic__grid {
+        grid-template-columns: 360px 1fr;
+      }
     }
 
     .diagnostic__left {
@@ -288,7 +349,9 @@
       align-items: start;
     }
 
-    .problem-item:first-child { border-top: 1px solid var(--border); }
+    .problem-item:first-child {
+      border-top: 1px solid var(--border);
+    }
 
     .problem-item__num {
       font-family: var(--font-display);
@@ -358,7 +421,10 @@
       margin-top: 0.08rem;
     }
 
-    .project-card__outcome-icon svg { width: 0.85rem; height: 0.85rem; }
+    .project-card__outcome-icon svg {
+      width: 0.85rem;
+      height: 0.85rem;
+    }
 
     .project-card__outcome p {
       font-size: 0.8rem;
@@ -390,13 +456,16 @@
       opacity: 0;
       transform: translateY(24px);
     }
+
     .fade-in {
       opacity: 0;
     }
+
     .slide-left {
       opacity: 0;
       transform: translateX(-28px);
     }
+
     .slide-right {
       opacity: 0;
       transform: translateX(28px);
@@ -438,6 +507,7 @@
       letter-spacing: -0.02em;
       flex-shrink: 0;
     }
+
     .nav__logo span {
       color: var(--accent);
     }
@@ -455,7 +525,10 @@
       color: var(--text-dim);
       transition: color 0.18s ease;
     }
-    .nav__links a:hover { color: var(--white); }
+
+    .nav__links a:hover {
+      color: var(--white);
+    }
 
     .nav__cta {
       flex-shrink: 0;
@@ -471,19 +544,30 @@
       cursor: pointer;
       transition: border-color 0.2s;
     }
+
     .nav__mobile-toggle svg {
       display: block;
       width: 18px;
       height: 18px;
     }
+
     .nav__mobile-toggle:hover {
-      border-color: rgba(255,255,255,0.2);
+      border-color: rgba(255, 255, 255, 0.2);
     }
 
     @media (max-width: 768px) {
-      .nav__links { display: none; }
-      .nav__cta   { display: none; }
-      .nav__mobile-toggle { display: flex; align-items: center; }
+      .nav__links {
+        display: none;
+      }
+
+      .nav__cta {
+        display: none;
+      }
+
+      .nav__mobile-toggle {
+        display: flex;
+        align-items: center;
+      }
     }
 
     /* Mobile menu drawer */
@@ -495,7 +579,7 @@
       right: 0;
       bottom: 0;
       z-index: 99;
-      background: rgba(13,13,15,0.98);
+      background: rgba(13, 13, 15, 0.98);
       backdrop-filter: blur(10px);
       -webkit-backdrop-filter: blur(10px);
       flex-direction: column;
@@ -503,7 +587,11 @@
       justify-content: center;
       gap: 2rem;
     }
-    .mobile-menu.open { display: flex; }
+
+    .mobile-menu.open {
+      display: flex;
+    }
+
     .mobile-menu a {
       font-family: var(--font-display);
       font-size: 1.4rem;
@@ -511,7 +599,11 @@
       color: var(--text);
       transition: color 0.18s;
     }
-    .mobile-menu a:hover { color: var(--white); }
+
+    .mobile-menu a:hover {
+      color: var(--white);
+    }
+
     .mobile-menu__close {
       position: absolute;
       top: 1.5rem;
@@ -529,9 +621,10 @@
       font-size: 1.1rem;
       transition: all 0.2s;
     }
+
     .mobile-menu__close:hover {
       color: var(--white);
-      border-color: rgba(255,255,255,0.2);
+      border-color: rgba(255, 255, 255, 0.2);
     }
 
     /* ===========================================
@@ -550,7 +643,7 @@
       transform: translateX(-50%);
       width: 600px;
       height: 500px;
-      background: radial-gradient(ellipse at center, rgba(200,164,106,0.05) 0%, transparent 70%);
+      background: radial-gradient(ellipse at center, rgba(200, 164, 106, 0.05) 0%, transparent 70%);
       pointer-events: none;
     }
 
@@ -579,8 +672,15 @@
     }
 
     @keyframes pulse-dot {
-      0%, 100% { opacity: 1; }
-      50%       { opacity: 0.35; }
+
+      0%,
+      100% {
+        opacity: 1;
+      }
+
+      50% {
+        opacity: 0.35;
+      }
     }
 
     .hero__status-text {
@@ -647,10 +747,15 @@
     }
 
     @media (min-width: 640px) {
-      .testimonials__grid { grid-template-columns: 1fr 1fr; }
+      .testimonials__grid {
+        grid-template-columns: 1fr 1fr;
+      }
     }
+
     @media (min-width: 1024px) {
-      .testimonials__grid { grid-template-columns: 1fr 1fr 1fr 1fr; }
+      .testimonials__grid {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+      }
     }
 
     .testimonial-card {
@@ -661,6 +766,7 @@
       gap: 1.25rem;
       transition: background 0.25s ease;
     }
+
     .testimonial-card:hover {
       background: var(--bg-surface);
     }
@@ -738,12 +844,15 @@
         grid-template-columns: 340px 1fr;
         min-height: 260px;
       }
+
       .project-card.reverse {
         grid-template-columns: 1fr 340px;
       }
+
       .project-card.reverse .project-card__image {
         order: 2;
       }
+
       .project-card.reverse .project-card__body {
         order: 1;
       }
@@ -761,7 +870,9 @@
     }
 
     @media (min-width: 860px) {
-      .project-card__image { min-height: unset; }
+      .project-card__image {
+        min-height: unset;
+      }
     }
 
     .project-card__image img {
@@ -867,7 +978,10 @@
       gap: 0.3rem;
       transition: gap 0.2s ease;
     }
-    .project-link:hover { gap: 0.5rem; }
+
+    .project-link:hover {
+      gap: 0.5rem;
+    }
 
     /* ===========================================
        SERVICES
@@ -883,10 +997,15 @@
     }
 
     @media (min-width: 640px) {
-      .services__grid { grid-template-columns: 1fr 1fr; }
+      .services__grid {
+        grid-template-columns: 1fr 1fr;
+      }
     }
+
     @media (min-width: 1024px) {
-      .services__grid { grid-template-columns: 1fr 1fr 1fr; }
+      .services__grid {
+        grid-template-columns: 1fr 1fr 1fr;
+      }
     }
 
     .service-card {
@@ -897,7 +1016,10 @@
       gap: 1rem;
       transition: background 0.25s ease;
     }
-    .service-card:hover { background: var(--bg-surface); }
+
+    .service-card:hover {
+      background: var(--bg-surface);
+    }
 
     .service-card__icon {
       width: 2.5rem;
@@ -910,6 +1032,7 @@
       color: var(--accent);
       flex-shrink: 0;
     }
+
     .service-card__icon svg {
       width: 1.1rem;
       height: 1.1rem;
@@ -964,10 +1087,15 @@
     }
 
     @media (min-width: 768px) {
-      .process__steps { grid-template-columns: 1fr 1fr; }
+      .process__steps {
+        grid-template-columns: 1fr 1fr;
+      }
     }
+
     @media (min-width: 1024px) {
-      .process__steps { grid-template-columns: 1fr 1fr 1fr 1fr; }
+      .process__steps {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+      }
     }
 
     .process-step {
@@ -983,6 +1111,7 @@
       .process-step {
         border-right: 1px solid var(--border);
       }
+
       .process-step:nth-child(2n) {
         border-right: none;
       }
@@ -993,6 +1122,7 @@
         border-right: 1px solid var(--border);
         border-bottom: none;
       }
+
       .process-step:last-child {
         border-right: none;
       }
@@ -1091,7 +1221,7 @@
       display: flex;
       flex-direction: column;
       gap: 0.15rem;
-      box-shadow: 0 8px 24px rgba(0,0,0,0.35);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
     }
 
     .about__badge-num {
@@ -1169,7 +1299,9 @@
     }
 
     @media (min-width: 860px) {
-      .contact__grid { grid-template-columns: 1fr 1fr; }
+      .contact__grid {
+        grid-template-columns: 1fr 1fr;
+      }
     }
 
     .contact__left {
@@ -1202,6 +1334,7 @@
       border-radius: var(--r-md);
       transition: border-color 0.2s ease, background 0.2s ease;
     }
+
     .contact-link:hover {
       border-color: var(--border-h);
       background: var(--bg-surface);
@@ -1218,6 +1351,7 @@
       justify-content: center;
       flex-shrink: 0;
     }
+
     .contact-link__icon svg {
       width: 1rem;
       height: 1rem;
@@ -1282,7 +1416,7 @@
     .form-field input:focus,
     .form-field select:focus,
     .form-field textarea:focus {
-      border-color: rgba(200,164,106,0.45);
+      border-color: rgba(200, 164, 106, 0.45);
     }
 
     .form-field select {
@@ -1325,7 +1459,10 @@
       font-weight: 700;
       color: var(--white);
     }
-    .footer__logo span { color: var(--accent); }
+
+    .footer__logo span {
+      color: var(--accent);
+    }
 
     .footer__copy {
       font-size: 0.8rem;
@@ -1343,7 +1480,10 @@
       color: var(--text-dim);
       transition: color 0.18s;
     }
-    .footer__links a:hover { color: var(--white); }
+
+    .footer__links a:hover {
+      color: var(--white);
+    }
 
     /* ===========================================
        WHATSAPP FLOAT
@@ -1364,10 +1504,12 @@
       box-shadow: 0 4px 18px rgba(37, 211, 102, 0.3);
       transition: transform 0.2s ease, box-shadow 0.2s ease;
     }
+
     .wa-float:hover {
       transform: translateY(-3px);
       box-shadow: 0 8px 24px rgba(37, 211, 102, 0.4);
     }
+
     .wa-float svg {
       width: 1.4rem;
       height: 1.4rem;
@@ -1376,26 +1518,105 @@
     /* ===========================================
        MISC HELPERS
     =========================================== */
-    .text-accent { color: var(--accent); }
+    .text-accent {
+      color: var(--accent);
+    }
 
-    .mt-sm { margin-top: 0.75rem; }
-    .mt-md { margin-top: 1.5rem; }
-    .mt-lg { margin-top: 2.5rem; }
+    .mt-sm {
+      margin-top: 0.75rem;
+    }
+
+    .mt-md {
+      margin-top: 1.5rem;
+    }
+
+    .mt-lg {
+      margin-top: 2.5rem;
+    }
 
     /* ===========================================
        SCROLLBAR (subtle)
     =========================================== */
-    ::-webkit-scrollbar { width: 6px; }
-    ::-webkit-scrollbar-track { background: var(--bg); }
+    ::-webkit-scrollbar {
+      width: 6px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: var(--bg);
+    }
+
     ::-webkit-scrollbar-thumb {
       background: var(--bg-surface);
       border-radius: 3px;
     }
+
     ::-webkit-scrollbar-thumb:hover {
-      background: rgba(255,255,255,0.1);
+      background: rgba(255, 255, 255, 0.1);
+    }
+  </style>
+  <style>
+    .faq-question {
+      font-family: var(--font-display);
+      font-weight: 700;
+      color: var(--white);
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: 0.3s ease;
+      color: var(--text-dim);
+    }
+
+    .faq-item.active .faq-answer {
+      max-height: 300px;
+      margin-top: 0.75rem;
+    }
+
+    @media (max-width: 768px) {
+
+      .nav__links,
+      .nav__cta {
+        display: none;
+      }
+
+      .nav__mobile-toggle {
+        display: flex;
+      }
+    }
+
+    .mobile-menu {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(13, 13, 15, 0.98);
+      backdrop-filter: blur(10px);
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 2rem;
+      z-index: 99;
+    }
+
+    .mobile-menu.open {
+      display: flex;
+    }
+
+    .fade-up,
+    .slide-left,
+    .slide-right {
+      opacity: 0;
+    }
+
+    .fade-up {
+      transform: translateY(24px);
     }
   </style>
 </head>
+
 <body>
 
   <!-- ========================================================
@@ -1417,7 +1638,7 @@
 
         <button class="nav__mobile-toggle" aria-label="Open menu" id="menuToggle">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M3 6h18M3 12h18M3 18h18"/>
+            <path d="M3 6h18M3 12h18M3 18h18" />
           </svg>
         </button>
       </div>
@@ -1452,7 +1673,8 @@
           </h1>
 
           <p class="hero__sub fade-up">
-            Most websites look great while quietly leaking leads behind the scenes. Your business needs a website that actually helps it grow. Let's explore how to make that happen.
+            Most websites look great while quietly leaking leads behind the scenes. Your business needs a website that
+            actually helps it grow. Let's explore how to make that happen.
           </p>
 
           <div class="hero__actions fade-up">
@@ -1494,10 +1716,12 @@
               What's the <br>actual problem?
             </h2>
             <p class="diagnostic__intro fade-up">
-              The problems are rarely unique. Most businesses are dealing with the same issues, they've just got used to 'managing' them.
+              The problems are rarely unique. Most businesses are dealing with the same issues, they've just got used to
+              'managing' them.
             </p>
             <div class="diagnostic__close fade-up">
-              <em>This is usually the point at which client contact me.</em> Not because they want a new website. But because something is costing them business, and they've finally decided to fix it.
+              <em>This is usually the point at which client contact me.</em> Not because they want a new website. But
+              because something is costing them business, and they've finally decided to fix it.
             </div>
           </div>
 
@@ -1507,7 +1731,9 @@
               <span class="problem-item__num">01</span>
               <div>
                 <div class="problem-item__title">The site was built for appearance, not operation</div>
-                <p class="problem-item__desc">It looks reasonable. But behind it, the team still uses spreadsheets, emails, and manual follow-ups to do work the site should be handling. Nobody planned the operation - they planned the pages.</p>
+                <p class="problem-item__desc">It looks reasonable. But behind it, the team still uses spreadsheets,
+                  emails, and manual follow-ups to do work the site should be handling. Nobody planned the operation -
+                  they planned the pages.</p>
               </div>
             </div>
 
@@ -1515,15 +1741,19 @@
               <span class="problem-item__num">02</span>
               <div>
                 <div class="problem-item__title">Users drop off and nobody knows exactly where</div>
-                <p class="problem-item__desc">Traffic comes in. Conversions don't match up. The form is too long, the navigation is confusing, or the page doesn't answer the question the visitor actually has. Most of this is fixable - once you look at it properly.</p>
+                <p class="problem-item__desc">Traffic comes in. Conversions don't match up. The form is too long, the
+                  navigation is confusing, or the page doesn't answer the question the visitor actually has. Most of
+                  this is fixable - once you look at it properly.</p>
               </div>
             </div>
-            
+
             <div class="problem-item">
               <span class="problem-item__num">03</span>
               <div>
                 <div class="problem-item__title">Nobody thinks about what happens after a customer arrives</div>
-                <p class="problem-item__desc">The marketing spends money to get people there. The site has no clear path forward. No logical next step. No mechanism for capturing interest or starting a relationship. Traffic and conversion are treated as separate problems - they aren't.</p>
+                <p class="problem-item__desc">The marketing spends money to get people there. The site has no clear path
+                  forward. No logical next step. No mechanism for capturing interest or starting a relationship. Traffic
+                  and conversion are treated as separate problems - they aren't.</p>
               </div>
             </div>
 
@@ -1531,7 +1761,9 @@
               <span class="problem-item__num">04</span>
               <div>
                 <div class="problem-item__title">The developer disappeared after launch</div>
-                <p class="problem-item__desc">There was no handover. Nobody knows how to change anything. The business is dependent on someone who's no longer available, and every small update becomes a project. This is more common than it should be.</p>
+                <p class="problem-item__desc">There was no handover. Nobody knows how to change anything. The business
+                  is dependent on someone who's no longer available, and every small update becomes a project. This is
+                  more common than it should be.</p>
               </div>
             </div>
 
@@ -1539,7 +1771,9 @@
               <span class="problem-item__num">05</span>
               <div>
                 <div class="problem-item__title">The site doesn't work properly on mobile</div>
-                <p class="problem-item__desc">It was built on desktop and tested on desktop. Half of visitors - often more - are on phones. A layout that breaks, loads slowly, or buries key information on mobile is turning people away before they've made a decision.</p>
+                <p class="problem-item__desc">It was built on desktop and tested on desktop. Half of visitors - often
+                  more - are on phones. A layout that breaks, loads slowly, or buries key information on mobile is
+                  turning people away before they've made a decision.</p>
               </div>
             </div>
 
@@ -1547,7 +1781,9 @@
               <span class="problem-item__num">06</span>
               <div>
                 <div class="problem-item__title">The system was built for today, not for growth</div>
-                <p class="problem-item__desc">It works at current volume. But add more users, more data, more products - and cracks appear. Features that should be straightforward require significant rework. The architecture wasn't planned. It was improvised.</p>
+                <p class="problem-item__desc">It works at current volume. But add more users, more data, more products -
+                  and cracks appear. Features that should be straightforward require significant rework. The
+                  architecture wasn't planned. It was improvised.</p>
               </div>
             </div>
 
@@ -1555,12 +1791,15 @@
               <span class="problem-item__num">07</span>
               <div>
                 <div class="problem-item__title">The admin system is worse than the public site</div>
-                <p class="problem-item__desc">Staff navigate it slowly. Simple tasks require multiple steps. When anything changes, someone has to call the developer. A system your own team struggles to use is an expensive problem hiding in plain sight.</p>
+                <p class="problem-item__desc">Staff navigate it slowly. Simple tasks require multiple steps. When
+                  anything changes, someone has to call the developer. A system your own team struggles to use is an
+                  expensive problem hiding in plain sight.</p>
               </div>
             </div>
 
             <div class="diagnostic__pullquote">
-              <p>"A lot of businesses are losing time and money because their systems are inefficient. The problem is usually spread across daily tasks and staff workflows, so it goes unnoticed for far too long."</p>
+              <p>"A lot of businesses are losing time and money because their systems are inefficient. The problem is
+                usually spread across daily tasks and staff workflows, so it goes unnoticed for far too long."</p>
               <span>- This is the first conversation I have with most new clients.</span>
             </div>
 
@@ -1583,7 +1822,8 @@
             </h2>
           </div>
           <p class="body-sm fade-in" style="max-width:300px;">
-            Five engagements. Different industries, different problems - but in each case, something in how the business operated improved.
+            Five engagements. Different industries, different problems - but in each case, something in how the business
+            operated improved.
           </p>
         </div>
 
@@ -1592,15 +1832,15 @@
           <!-- Project 1: SafetyCentre -->
           <article class="project-card fade-up">
             <div class="project-card__image">
-              <img
-                src="assets/safetycentre-home.png"
-                alt="SafetyCentre website screenshot"
-                loading="lazy"
-                onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
-              />
+              <img src="assets/safetycentre-home.png" alt="SafetyCentre website screenshot" loading="lazy"
+                onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
               <div class="project-card__image-placeholder" style="display:none;">
                 <div class="placeholder-box">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="12" cy="10" r="3"/><path d="M7 20c0-2.8 2.2-5 5-5s5 2.2 5 5"/></svg>
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <rect x="3" y="3" width="18" height="18" rx="2" />
+                    <circle cx="12" cy="10" r="3" />
+                    <path d="M7 20c0-2.8 2.2-5 5-5s5 2.2 5 5" />
+                  </svg>
                   <span>safetycentre-home.png</span>
                 </div>
               </div>
@@ -1612,14 +1852,21 @@
               </div>
               <h3 class="project-card__title">From manual follow-ups to a structured client system</h3>
               <p class="project-card__desc">
-                The team was managing inquiries manually - emails, follow-up calls, spreadsheets. The site existed but did no operational work. Every new client required staff to repeat the same process by hand.
+                The team was managing inquiries manually - emails, follow-up calls, spreadsheets. The site existed but
+                did no operational work. Every new client required staff to repeat the same process by hand.
               </p>
               <p class="project-card__desc" style="margin-top:-0.25rem;">
-                Rebuilt the website into a structured service platform that helped visitors find the right service faster, answer common questions themselves, and reach the correct team without unnecessary back-and-forth. This reduced routine admin work for staff within weeks.
+                Rebuilt the website into a structured service platform that helped visitors find the right service
+                faster, answer common questions themselves, and reach the correct team without unnecessary
+                back-and-forth. This reduced routine admin work for staff within weeks.
               </p>
               <div class="project-card__outcome">
-                <span class="project-card__outcome-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg></span>
-                <p><strong>Operational shift:</strong> Clients could navigate the service offering independently. The team stopped chasing basic inquiries and started responding to qualified ones.</p>
+                <span class="project-card__outcome-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                    stroke-width="2.5">
+                    <polyline points="20 6 9 17 4 12" />
+                  </svg></span>
+                <p><strong>Operational shift:</strong> Clients could navigate the service offering independently. The
+                  team stopped chasing basic inquiries and started responding to qualified ones.</p>
               </div>
               <div class="project-card__stack">
                 <span class="chip">PHP</span>
@@ -1633,15 +1880,15 @@
           <!-- Project 2: Eldorado -->
           <article class="project-card reverse fade-up">
             <div class="project-card__image">
-              <img
-                src="assets/eldorado-home.png"
-                alt="Eldorado website screenshot"
-                loading="lazy"
-                onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
-              />
+              <img src="assets/eldorado-home.png" alt="Eldorado website screenshot" loading="lazy"
+                onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
               <div class="project-card__image-placeholder" style="display:none;">
                 <div class="placeholder-box">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="12" cy="10" r="3"/><path d="M7 20c0-2.8 2.2-5 5-5s5 2.2 5 5"/></svg>
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <rect x="3" y="3" width="18" height="18" rx="2" />
+                    <circle cx="12" cy="10" r="3" />
+                    <path d="M7 20c0-2.8 2.2-5 5-5s5 2.2 5 5" />
+                  </svg>
                   <span>eldorado-home.png</span>
                 </div>
               </div>
@@ -1656,7 +1903,9 @@
                 The client needed a professional web presence that conveyed authority in a competitive market.
               </p>
               <p class="project-card__desc">
-                Designed and built a structured business directory and inquiry system that made it easier for visitors to find information and contact the right people, while allowing the client to manage and update content themselves without relying on a developer.
+                Designed and built a structured business directory and inquiry system that made it easier for visitors
+                to find information and contact the right people, while allowing the client to manage and update content
+                themselves without relying on a developer.
               </p>
               <div class="project-card__stack">
                 <span class="chip">PHP</span>
@@ -1664,22 +1913,22 @@
                 <span class="chip">GSAP</span>
                 <span class="chip">CSS Grid</span>
               </div>
-              
+
             </div>
           </article>
 
           <!-- Project 3: BTFD -->
           <article class="project-card fade-up">
             <div class="project-card__image">
-              <img
-                src="assets/btfd-dashboard.png"
-                alt="BTFD platform screenshot"
-                loading="lazy"
-                onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
-              />
+              <img src="assets/btfd-dashboard.png" alt="BTFD platform screenshot" loading="lazy"
+                onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
               <div class="project-card__image-placeholder" style="display:none;">
                 <div class="placeholder-box">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="12" cy="10" r="3"/><path d="M7 20c0-2.8 2.2-5 5-5s5 2.2 5 5"/></svg>
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <rect x="3" y="3" width="18" height="18" rx="2" />
+                    <circle cx="12" cy="10" r="3" />
+                    <path d="M7 20c0-2.8 2.2-5 5-5s5 2.2 5 5" />
+                  </svg>
                   <span>btfd-dashboard.png</span>
                 </div>
               </div>
@@ -1691,32 +1940,34 @@
               </div>
               <h3 class="project-card__title">Member Dashboard & Engagement System</h3>
               <p class="project-card__problem">
-                A growing community with no structured hub - members were scattered across platforms with no central place to track activity.
+                A growing community with no structured hub - members were scattered across platforms with no central
+                place to track activity.
               </p>
               <p class="project-card__desc">
-                Built a central online hub where members could track activity, stay engaged, and interact with the community, while giving the client an easier way to manage everything behind the scenes.              </p>
+                Built a central online hub where members could track activity, stay engaged, and interact with the
+                community, while giving the client an easier way to manage everything behind the scenes. </p>
               <div class="project-card__stack">
                 <span class="chip">PHP</span>
                 <span class="chip">MySQL</span>
                 <span class="chip">REST API</span>
                 <span class="chip">Vanilla JS</span>
               </div>
-              
+
             </div>
           </article>
 
           <!-- Project 4: Albatross -->
           <article class="project-card reverse fade-up">
             <div class="project-card__image">
-              <img
-                src="assets/albatross-landing.png"
-                alt="Albatross landing page screenshot"
-                loading="lazy"
-                onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
-              />
+              <img src="assets/albatross-landing.png" alt="Albatross landing page screenshot" loading="lazy"
+                onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
               <div class="project-card__image-placeholder" style="display:none;">
                 <div class="placeholder-box">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="12" cy="10" r="3"/><path d="M7 20c0-2.8 2.2-5 5-5s5 2.2 5 5"/></svg>
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <rect x="3" y="3" width="18" height="18" rx="2" />
+                    <circle cx="12" cy="10" r="3" />
+                    <path d="M7 20c0-2.8 2.2-5 5-5s5 2.2 5 5" />
+                  </svg>
                   <span>albatross-landing.png</span>
                 </div>
               </div>
@@ -1731,7 +1982,8 @@
                 High traffic with low conversion. Visitors weren't understanding the product or signing up.
               </p>
               <p class="project-card__desc">
-                Redesigned the landing page to make the product easier to understand, easier to trust, and easier to sign up for, reducing the number of visitors who left before creating an account.
+                Redesigned the landing page to make the product easier to understand, easier to trust, and easier to
+                sign up for, reducing the number of visitors who left before creating an account.
               </p>
               <div class="project-card__stack">
                 <span class="chip">HTML/CSS</span>
@@ -1739,22 +1991,22 @@
                 <span class="chip">GSAP</span>
                 <span class="chip">Conversion Design</span>
               </div>
-              
+
             </div>
           </article>
 
           <!-- Project 5: The Secret World -->
           <article class="project-card fade-up">
             <div class="project-card__image">
-              <img
-                src="assets/secretworld-ui.png"
-                alt="The Secret World application screenshot"
-                loading="lazy"
-                onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
-              />
+              <img src="assets/secretworld-ui.png" alt="The Secret World application screenshot" loading="lazy"
+                onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
               <div class="project-card__image-placeholder" style="display:none;">
                 <div class="placeholder-box">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="12" cy="10" r="3"/><path d="M7 20c0-2.8 2.2-5 5-5s5 2.2 5 5"/></svg>
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <rect x="3" y="3" width="18" height="18" rx="2" />
+                    <circle cx="12" cy="10" r="3" />
+                    <path d="M7 20c0-2.8 2.2-5 5-5s5 2.2 5 5" />
+                  </svg>
                   <span>secretworld-ui.png</span>
                 </div>
               </div>
@@ -1766,17 +2018,19 @@
               </div>
               <h3 class="project-card__title">Browser-Based Engagement Application</h3>
               <p class="project-card__problem">
-                The client needed a way to keep users engaged between major releases - a lightweight, self-contained experience they could return to daily.
+                The client needed a way to keep users engaged between major releases - a lightweight, self-contained
+                experience they could return to daily.
               </p>
               <p class="project-card__desc">
-                Built a browser-based experience that gave users a reason to return daily, track progress, and stay engaged over time, without needing an app download.              </p>
+                Built a browser-based experience that gave users a reason to return daily, track progress, and stay
+                engaged over time, without needing an app download. </p>
               <div class="project-card__stack">
                 <span class="chip">HTML/CSS/JS</span>
                 <span class="chip">PHP</span>
                 <span class="chip">MySQL</span>
                 <span class="chip">LocalStorage</span>
               </div>
-              
+
             </div>
           </article>
 
@@ -1797,7 +2051,8 @@
             The kind of work<br>I take on.
           </h2>
           <p class="body-lg fade-up" style="margin-top:1rem; max-width:500px; color:var(--text-dim);">
-            I'm not a generalist who does a bit of everything. These are the areas where I consistently deliver strong results.
+            I'm not a generalist who does a bit of everything. These are the areas where I consistently deliver strong
+            results.
           </p>
         </div>
 
@@ -1805,7 +2060,10 @@
 
           <div class="service-card fade-up">
             <div class="service-card__icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 9h6M9 12h6M9 15h4"/></svg>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75">
+                <rect x="3" y="3" width="18" height="18" rx="2" />
+                <path d="M9 9h6M9 12h6M9 15h4" />
+              </svg>
             </div>
             <div class="service-card__title">Business Websites</div>
             <p class="service-card__desc">
@@ -1821,7 +2079,12 @@
 
           <div class="service-card fade-up">
             <div class="service-card__icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/><line x1="12" y1="12" x2="12" y2="16"/><line x1="10" y1="14" x2="14" y2="14"/></svg>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75">
+                <rect x="2" y="7" width="20" height="14" rx="2" />
+                <path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2" />
+                <line x1="12" y1="12" x2="12" y2="16" />
+                <line x1="10" y1="14" x2="14" y2="14" />
+              </svg>
             </div>
             <div class="service-card__title">Web Applications</div>
             <p class="service-card__desc">
@@ -1837,7 +2100,10 @@
 
           <div class="service-card fade-up">
             <div class="service-card__icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"><path d="M4 4h16v16H4z"/><path d="M4 9h16M9 4v16"/></svg>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75">
+                <path d="M4 4h16v16H4z" />
+                <path d="M4 9h16M9 4v16" />
+              </svg>
             </div>
             <div class="service-card__title">E-commerce & Sales</div>
             <p class="service-card__desc">
@@ -1853,7 +2119,9 @@
 
           <div class="service-card fade-up">
             <div class="service-card__icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"><path d="M12 2 2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75">
+                <path d="M12 2 2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
+              </svg>
             </div>
             <div class="service-card__title">API & Backend Systems</div>
             <p class="service-card__desc">
@@ -1869,7 +2137,10 @@
 
           <div class="service-card fade-up">
             <div class="service-card__icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75">
+                <circle cx="12" cy="12" r="10" />
+                <path d="M12 8v4l3 3" />
+              </svg>
             </div>
             <div class="service-card__title">Rebuilds & Fixes</div>
             <p class="service-card__desc">
@@ -1885,11 +2156,17 @@
 
           <div class="service-card fade-up">
             <div class="service-card__icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75">
+                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+                <circle cx="9" cy="7" r="4" />
+                <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
+                <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+              </svg>
             </div>
             <div class="service-card__title">Community & Engagement Systems</div>
             <p class="service-card__desc">
-              Platforms that keep users active - member dashboards, reward mechanics, activity tracking, and engagement loops.
+              Platforms that keep users active - member dashboards, reward mechanics, activity tracking, and engagement
+              loops.
             </p>
             <ul class="service-card__list" role="list">
               <li>Member portals and accounts</li>
@@ -1926,7 +2203,8 @@
             <span class="process-step__num">01</span>
             <h3 class="process-step__title">Understand the brief</h3>
             <p class="process-step__desc">
-              We talk through what you're building, why it matters, and where the current situation is falling short. I ask the questions other developers skip.
+              We talk through what you're building, why it matters, and where the current situation is falling short. I
+              ask the questions other developers skip.
             </p>
           </div>
 
@@ -1934,7 +2212,8 @@
             <span class="process-step__num">02</span>
             <h3 class="process-step__title">Plan before building</h3>
             <p class="process-step__desc">
-              I map out the structure, data model, and scope before writing a line of code. This saves time and avoids the mid-project pivots that kill projects.
+              I map out the structure, data model, and scope before writing a line of code. This saves time and avoids
+              the mid-project pivots that kill projects.
             </p>
           </div>
 
@@ -1942,7 +2221,8 @@
             <span class="process-step__num">03</span>
             <h3 class="process-step__title">Build in stages</h3>
             <p class="process-step__desc">
-              You see progress regularly. I ship in stages, collect feedback early, and adjust before problems compound. Consistent updates throughout.
+              You see progress regularly. I ship in stages, collect feedback early, and adjust before problems compound.
+              Consistent updates throughout.
             </p>
           </div>
 
@@ -1950,7 +2230,8 @@
             <span class="process-step__num">04</span>
             <h3 class="process-step__title">Hand over properly</h3>
             <p class="process-step__desc">
-              Clean code. Documentation where it matters. I don't disappear post-launch - I make sure you know how to run what I've built.
+              Clean code. Documentation where it matters. I don't disappear post-launch - I make sure you know how to
+              run what I've built.
             </p>
           </div>
 
@@ -1961,7 +2242,7 @@
     <hr class="divider" />
 
 
-    
+
     <!-- ========================================================
          TESTIMONIALS
     ======================================================== -->
@@ -1978,7 +2259,8 @@
 
           <article class="testimonial-card fade-up">
             <p class="testimonial-card__quote">
-              "Chris handled both the technical side and the business flow properly. The site became easier for clients to navigate and easier for us to manage."
+              "Chris handled both the technical side and the business flow properly. The site became easier for clients
+              to navigate and easier for us to manage."
             </p>
             <div class="testimonial-card__author">
               <div class="testimonial-card__name">Joe Oduah</div>
@@ -2008,7 +2290,8 @@
 
           <article class="testimonial-card fade-up">
             <p class="testimonial-card__quote">
-              "Reliable, practical, and detail-oriented. He approached the project like a partner, not just a developer."
+              "Reliable, practical, and detail-oriented. He approached the project like a partner, not just a
+              developer."
             </p>
             <div class="testimonial-card__author">
               <div class="testimonial-card__name">Dr Emegoakor</div>
@@ -2033,14 +2316,13 @@
 
           <div class="about__photo-wrap slide-left">
             <div class="about__photo">
-              <img
-                src="assets/chris-photo.png"
-                alt="Chris Nwasike"
-                loading="lazy"
-                onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
-              />
+              <img src="assets/chris-photo.png" alt="Chris Nwasike" loading="lazy"
+                onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
               <div class="about__photo-placeholder" style="display:none;">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.25"><circle cx="12" cy="8" r="5"/><path d="M20 21a8 8 0 1 0-16 0"/></svg>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.25">
+                  <circle cx="12" cy="8" r="5" />
+                  <path d="M20 21a8 8 0 1 0-16 0" />
+                </svg>
                 <span>Photo</span>
               </div>
             </div>
@@ -2059,15 +2341,19 @@
             </div>
 
             <p>
-              I'm a senior web developer based in Lagos, Nigeria. I've been building websites and web applications professionally for over fifteen years - across service businesses, platforms, community products, and everything in between.
+              I'm a senior web developer based in Lagos, Nigeria. I've been building websites and web applications
+              professionally for over fifteen years - across service businesses, platforms, community products, and
+              everything in between.
             </p>
 
             <p>
-              <strong>I work as a solo developer</strong>, which means you deal with one person throughout a project. No account managers, no handoffs. The person you talk to is the person writing the code.
+              <strong>I work as a solo developer</strong>, which means you deal with one person throughout a project. No
+              account managers, no handoffs. The person you talk to is the person writing the code.
             </p>
 
             <p>
-              I build things that are fast, maintainable, and structured to grow - not the kind of output you have to rewrite 12 months later.
+              I build things that are fast, maintainable, and structured to grow - not the kind of output you have to
+              rewrite 12 months later.
             </p>
 
             <div class="about__stats">
@@ -2086,7 +2372,8 @@
             </div>
 
             <p>
-              I also build my own products under <strong>IdleForged</strong>, which keeps me close to the full product cycle - not just the development side.
+              I also build my own products under <strong>IdleForged</strong>, which keeps me close to the full product
+              cycle - not just the development side.
             </p>
 
             <div>
@@ -2113,6 +2400,40 @@
 
     <hr class="divider" />
 
+    <!-- FAQ Section (entity SEO) -->
+    <section class="section--tight" id="faq">
+      <div class="container">
+        <div class="section-header"><span class="label">Common questions</span>
+          <h2 class="display-2">Straight answers</h2>
+        </div>
+        <div class="faq-list">
+          <div class="faq-item">
+            <div class="faq-question">How do you differ from a standard agency? <span
+                style="color:var(--accent);">+</span></div>
+            <div class="faq-answer">I don’t outsource, and I don’t sell you retainers you don’t need. You talk directly
+              to the developer. I focus on making your business operations smoother, not just aesthetic upgrades.</div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-question">Do you work with existing WordPress/Wix sites? <span>+</span></div>
+            <div class="faq-answer">Yes, especially when they've become bloated or hard to manage. I clean up, optimize,
+              or rebuild where necessary — always prioritizing maintainability.</div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-question">How long does a typical SME website project take? <span>+</span></div>
+            <div class="faq-answer">3 to 6 weeks depending on complexity. I scope first, then give a realistic timeline
+              before any payment.</div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-question">Can you integrate WhatsApp ordering or payment systems? <span>+</span></div>
+            <div class="faq-answer">Absolutely. Paystack, Flutterwave, and structured WhatsApp ordering flows are
+              standard in my builds.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <hr class="divider" />
+
     <!-- ========================================================
          CONTACT
     ======================================================== -->
@@ -2129,11 +2450,12 @@
         <div class="contact__grid">
 
           <div class="contact__left slide-left">
-          <p class="body-lg fade-up" style="margin-top:1rem; max-width:480px; color:var(--text-dim);">
-            Tell me what you're working on and I'll let you know if I can help. Most projects start with a short call.
-          </p>
+            <p class="body-lg fade-up" style="margin-top:1rem; max-width:480px; color:var(--text-dim);">
+              Tell me what you're working on and I'll let you know if I can help. Most projects start with a short call.
+            </p>
             <p class="contact__intro">
-              I'm currently available for new projects. I typically work with one or two clients at a time, so I can stay focused on what you need. Response time is usually within a few hours.
+              I'm currently available for new projects. I typically work with one or two clients at a time, so I can
+              stay focused on what you need. Response time is usually within a few hours.
             </p>
 
 
@@ -2178,49 +2500,66 @@
             </p>
 
           </form> -->
-            <div class="contact__channels">
+          <div class="contact__channels">
 
-              <a href="https://wa.me/2349018004458?text=Hi%20Chris,%20I%20found%20your%20portfolio%20and%20I'd%20like%20to%20discuss%20a%20project." target="_blank" rel="noopener noreferrer" class="contact-link">
-                <div class="contact-link__icon">
-                  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-                </div>
-                <div>
-                  <div class="contact-link__title">WhatsApp</div>
-                  <div class="contact-link__sub">+234 901 800 4458 · quickest way to reach me</div>
-                </div>
-              </a>
+            <a href="https://wa.me/2349018004458?text=Hi%20Chris,%20I%20found%20your%20portfolio%20and%20I'd%20like%20to%20discuss%20a%20project."
+              target="_blank" rel="noopener noreferrer" class="contact-link">
+              <div class="contact-link__icon">
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                  <path
+                    d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+                </svg>
+              </div>
+              <div>
+                <div class="contact-link__title">WhatsApp</div>
+                <div class="contact-link__sub">+234 901 800 4458 · quickest way to reach me</div>
+              </div>
+            </a>
 
-              <a href="https://calendly.com/chris-dbuilder/30min" target="_blank" rel="noopener noreferrer" class="contact-link">
-                <div class="contact-link__icon">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-                </div>
-                <div>
-                  <div class="contact-link__title">Book a 30-minute call</div>
-                  <div class="contact-link__sub">calendly.com/chris-dbuilder/30min</div>
-                </div>
-              </a>
+            <a href="https://calendly.com/chris-dbuilder/30min" target="_blank" rel="noopener noreferrer"
+              class="contact-link">
+              <div class="contact-link__icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75">
+                  <rect x="3" y="4" width="18" height="18" rx="2" />
+                  <line x1="16" y1="2" x2="16" y2="6" />
+                  <line x1="8" y1="2" x2="8" y2="6" />
+                  <line x1="3" y1="10" x2="21" y2="10" />
+                </svg>
+              </div>
+              <div>
+                <div class="contact-link__title">Book a 30-minute call</div>
+                <div class="contact-link__sub">calendly.com/chris-dbuilder/30min</div>
+              </div>
+            </a>
 
-              <a href="https://linkedin.com/in/chris-nwasike" target="_blank" rel="noopener noreferrer" class="contact-link">
-                <div class="contact-link__icon" style="background:rgba(10,102,194,0.12); color:#5da0d8;">
-                  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
-                </div>
-                <div>
-                  <div class="contact-link__title">LinkedIn</div>
-                  <div class="contact-link__sub">linkedin.com/in/chris-nwasike</div>
-                </div>
-              </a>
+            <a href="https://linkedin.com/in/chris-nwasike" target="_blank" rel="noopener noreferrer"
+              class="contact-link">
+              <div class="contact-link__icon" style="background:rgba(10,102,194,0.12); color:#5da0d8;">
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z" />
+                  <circle cx="4" cy="4" r="2" />
+                </svg>
+              </div>
+              <div>
+                <div class="contact-link__title">LinkedIn</div>
+                <div class="contact-link__sub">linkedin.com/in/chris-nwasike</div>
+              </div>
+            </a>
 
-              <a href="https://github.com/chrisnwasike" target="_blank" rel="noopener noreferrer" class="contact-link">
-                <div class="contact-link__icon" style="background:rgba(255,255,255,0.04); color:var(--text-dim);">
-                  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
-                </div>
-                <div>
-                  <div class="contact-link__title">GitHub</div>
-                  <div class="contact-link__sub">github.com/chrisnwasike</div>
-                </div>
-              </a>
+            <a href="https://github.com/chrisnwasike" target="_blank" rel="noopener noreferrer" class="contact-link">
+              <div class="contact-link__icon" style="background:rgba(255,255,255,0.04); color:var(--text-dim);">
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                  <path
+                    d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+                </svg>
+              </div>
+              <div>
+                <div class="contact-link__title">GitHub</div>
+                <div class="contact-link__sub">github.com/chrisnwasike</div>
+              </div>
+            </a>
 
-            </div>
+          </div>
 
         </div>
       </div>
@@ -2246,15 +2585,11 @@
   </footer>
 
   <!-- WhatsApp float -->
-  <a
-    href="https://wa.me/2349018004458?text=Hi%20Chris,%20I%20found%20your%20portfolio%20and%20I'd%20like%20to%20discuss%20a%20project."
-    target="_blank"
-    rel="noopener noreferrer"
-    class="wa-float"
-    aria-label="Chat with Chris on WhatsApp"
-  >
+  <a href="https://wa.me/2349018004458?text=Hi%20Chris,%20I%20found%20your%20portfolio%20and%20I'd%20like%20to%20discuss%20a%20project."
+    target="_blank" rel="noopener noreferrer" class="wa-float" aria-label="Chat with Chris on WhatsApp">
     <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+      <path
+        d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
     </svg>
   </a>
 
@@ -2271,11 +2606,11 @@
       onScroll();
 
       // ── Mobile menu ───────────────────────────────────
-      const mobileMenu  = document.getElementById('mobileMenu');
-      const menuToggle  = document.getElementById('menuToggle');
-      const menuClose   = document.getElementById('menuClose');
+      const mobileMenu = document.getElementById('mobileMenu');
+      const menuToggle = document.getElementById('menuToggle');
+      const menuClose = document.getElementById('menuClose');
 
-      const openMenu  = () => mobileMenu.classList.add('open');
+      const openMenu = () => mobileMenu.classList.add('open');
       const closeMenu = () => mobileMenu.classList.remove('open');
 
       menuToggle.addEventListener('click', openMenu);
@@ -2348,28 +2683,32 @@
       window.addEventListener('load', initAnimations);
 
       // ── Contact form (WhatsApp fallback) ─────────────
-      const form   = document.getElementById('contactForm');
+      const form = document.getElementById('contactForm');
       const status = document.getElementById('form-status');
 
-      form.addEventListener('submit', e => {
-        e.preventDefault();
-        const data    = new FormData(form);
-        const name    = (data.get('name')    || '').trim();
-        const email   = (data.get('email')   || '').trim();
-        const type    = (data.get('type')    || '').trim();
-        const message = (data.get('message') || '').trim();
+      // form.addEventListener('submit', e => {
+      //   e.preventDefault();
+      //   const data = new FormData(form);
+      //   const name = (data.get('name') || '').trim();
+      //   const email = (data.get('email') || '').trim();
+      //   const type = (data.get('type') || '').trim();
+      //   const message = (data.get('message') || '').trim();
 
-        if (!name || !email || !type || !message) return;
+      //   if (!name || !email || !type || !message) return;
 
-        const text = encodeURIComponent(
-          `Hi Chris, I'm reaching out from your portfolio.\n\nName: ${name}\nEmail: ${email}\nProject type: ${type}\n\n${message}`
-        );
+      //   const text = encodeURIComponent(
+      //     `Hi Chris, I'm reaching out from your portfolio.\n\nName: ${name}\nEmail: ${email}\nProject type: ${type}\n\n${message}`
+      //   );
 
-        window.open(`https://wa.me/2349018004458?text=${text}`, '_blank');
-        status.style.display = 'block';
-        form.reset();
+      //   window.open(`https://wa.me/2349018004458?text=${text}`, '_blank');
+      //   status.style.display = 'block';
+      //   form.reset();
+      // });
+
+      document.querySelectorAll('.faq-question').forEach(q => { 
+          q.addEventListener('click', () => { q.parentElement.classList.toggle('active'); }); 
       });
-
+    
       // ── Smooth anchor scroll ──────────────────────────
       document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', e => {
@@ -2383,5 +2722,31 @@
     });
   </script>
 
+<!-- Schema Markup (JSON-LD) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "Chris Nwasike",
+  "image": "https://chrisnwasike.github.io/web2/assets/chris-photo.png",
+  "url": "https://chrisnwasike.github.io/web2/",
+  "telephone": "+2349018004458",
+  "address": { "@type": "PostalAddress", "addressLocality": "Lagos", "addressCountry": "NG" },
+  "description": "Senior web developer building business systems and operational websites for Nigerian SMEs. Focus on workflow simplification, conversion, and maintainability.",
+  "knowsAbout": ["Business Systems", "SME Websites", "WhatsApp Integration", "Conversion Optimization", "PHP", "MySQL", "Web Application Development"],
+  "sameAs": ["https://linkedin.com/in/chris-nwasike", "https://github.com/chrisnwasike"]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {"@type":"Question","name":"How do you differ from a standard agency?","acceptedAnswer":{"@type":"Answer","text":"You talk directly to the developer. I focus on making business operations smoother, not just aesthetic upgrades."}},
+    {"@type":"Question","name":"Can you integrate WhatsApp ordering?","acceptedAnswer":{"@type":"Answer","text":"Yes, Paystack, Flutterwave, and structured WhatsApp ordering flows are standard."}}
+  ]
+}
+</script>
 </body>
+
 </html>
